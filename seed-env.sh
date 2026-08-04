@@ -1,7 +1,9 @@
   #!/command/with-contenv sh
-  mkdir -p /opt/data/.hermes
-  cat > /opt/data/.hermes/.env <<EOF
-  HONCHO_API_KEY=${HONCHO_API_KEY}
+  mkdir -p /opt/data
+  cat > /opt/data/.env <<EOF
+  ANTHROPIC_API_KEY="${ANTHROPIC_API_KEY}"
+  OPENROUTER_API_KEY="${OPENROUTER_API_KEY}"
+  HONCHO_API_KEY="${HONCHO_API_KEY}"
   EOF
-  chown -R 10000:10000 /opt/data/.hermes
-  chmod 600 /opt/data/.hermes/.env
+  chown 10000:10000 /opt/data/.env
+  chmod 600 /opt/data/.env
